@@ -1,0 +1,31 @@
+---
+title: "Exploración Plantas extintas"
+author: "Francisco Acuña"
+date: "11-09-2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introducción
+
+### De donde vienen los datos
+
+
+Estos datos vienen de la **UCN** y se obtuvieron del [siguiente repositorio](https://github.com/acunaolate/Plantas_Existintas) de github
+
+
+```{r, echo=TRUE}
+plants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+actions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv')
+threats <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv')
+```
+
+## Plantas de Sudamérica
+
+
+El numero de espescies el `r plants %>% dplyr::filter(continent == "South America") %>% nrow()` especies
